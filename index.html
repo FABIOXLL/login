@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login Instagram - Teste</title>
+  <title>Instagram - Login (Teste)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
       background-color: #fff;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -16,9 +17,12 @@
     }
 
     .logo {
-      font-family: 'Billabong', cursive;
-      font-size: 48px;
       margin-bottom: 30px;
+    }
+
+    .logo img {
+      width: 175px;
+      height: auto;
     }
 
     form {
@@ -98,7 +102,9 @@
   </style>
 </head>
 <body>
-  <div class="logo">Instagram</div>
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png" alt="Instagram Logo" />
+  </div>
 
   <form id="loginForm">
     <input type="text" name="username" placeholder="Telefone, nome de usuário ou email" required />
